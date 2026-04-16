@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Tablas de Verdad</title>
+  <meta name="description" content="Genera tablas de verdad para expresiones logicas. Soporta operadores como AND, OR, NOT, implicacion y bicondicional.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-decoration">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+
+  <main class="container">
+    
+    <header class="header">
+      <h1 class="title">Simulador de Tablas de Verdad</h1>
+      <p class="subtitle">Ingresa una expresion logica para generar su tabla de verdad completa</p>
+    </header>
+
+    <section class="card input-card">
+      <p class="instructions">Usa los botones o escribe directamente. Presiona Enter o el boton para generar.</p>
+      
+      <div class="input-row">
+        <input 
+          type="text" 
+          id="expression-input" 
+          class="expression-input" 
+          placeholder="Ej: P ∧ Q → R"
+          autocomplete="off"
+        >
+        <div class="button-group">
+          <button id="generate-btn" class="btn btn-primary">Generar</button>
+          <button id="clear-btn" class="btn btn-outline">Limpiar</button>
+        </div>
+      </div>
+
+      <div class="buttons-section">
+        <div class="buttons-row">
+          <span class="buttons-label">Operadores:</span>
+          <div class="buttons-container">
+            <button class="btn btn-operator" data-symbol="¬" title="Negacion">¬</button>
+            <button class="btn btn-operator" data-symbol="∧" title="Conjuncion">∧</button>
+            <button class="btn btn-operator" data-symbol="∨" title="Disyuncion">∨</button>
+            <button class="btn btn-operator" data-symbol="→" title="Implicacion">→</button>
+            <button class="btn btn-operator" data-symbol="↔" title="Bicondicional">↔</button>
+            <button class="btn btn-operator" data-symbol="(" title="Abrir parentesis">(</button>
+            <button class="btn btn-operator" data-symbol=")" title="Cerrar parentesis">)</button>
+          </div>
+        </div>
+        <div class="buttons-row">
+          <span class="buttons-label">Variables:</span>
+          <div class="buttons-container">
+            <button class="btn btn-variable" data-symbol="P">P</button>
+            <button class="btn btn-variable" data-symbol="Q">Q</button>
+            <button class="btn btn-variable" data-symbol="R">R</button>
+            <button class="btn btn-variable" data-symbol="S">S</button>
+            <button class="btn btn-variable" data-symbol="T">T</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="error-message" class="error-message" style="display: none;"></div>
+    </section>
+    
+    <section class="card legend-card">
+      <div class="legend-container">
+        <div class="legend-item">
+          <span class="legend-symbol">¬</span>
+          <span class="legend-text">NOT (negacion)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-symbol">∧</span>
+          <span class="legend-text">AND (y)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-symbol">∨</span>
+          <span class="legend-text">OR (o)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-symbol">→</span>
+          <span class="legend-text">Implicacion</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-symbol">↔</span>
+          <span class="legend-text">Bicondicional</span>
+        </div>
+      </div>
+    </section>
+
+</body>
+</html>
