@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!-- Decoraciones del bg -->
   <div class="bg-decoration">
     <div class="bg-circle bg-circle-1"></div>
     <div class="bg-circle bg-circle-2"></div>
@@ -19,12 +19,13 @@
   </div>
 
   <main class="container">
-    
+    <!-- Header -->
     <header class="header">
       <h1 class="title">Simulador de Tablas de Verdad</h1>
       <p class="subtitle">Ingresa una expresion logica para generar su tabla de verdad completa</p>
     </header>
 
+    <!-- Seccion del ingreso de datos de parte del usuario -->
     <section class="card input-card">
       <p class="instructions">Usa los botones o escribe directamente. Presiona Enter o el boton para generar.</p>
       
@@ -42,6 +43,7 @@
         </div>
       </div>
 
+      <!-- Botones de operadores -->
       <div class="buttons-section">
         <div class="buttons-row">
           <span class="buttons-label">Operadores:</span>
@@ -67,9 +69,11 @@
         </div>
       </div>
 
+      <!-- Mensaje de error -->
       <div id="error-message" class="error-message" style="display: none;"></div>
     </section>
-    
+
+    <!-- Leyenda -->
     <section class="card legend-card">
       <div class="legend-container">
         <div class="legend-item">
@@ -95,5 +99,23 @@
       </div>
     </section>
 
+    <!-- Seccion de Resultados -->
+    <section id="results-section" class="results-section" style="display: none;">
+      <div class="card table-card">
+        <div class="table-header">
+          <h2 class="table-title">Tabla de Verdad</h2>
+          <span id="expression-display" class="expression-badge"></span>
+        </div>
+        <div class="table-wrapper">
+          <table id="truth-table" class="truth-table">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
